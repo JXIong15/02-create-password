@@ -8,7 +8,14 @@ function writePassword() {
 
   passwordText.value = password;
 
+  
+  function generatePassword() {
+    if (confirm("Do you want your password to be at least 8 characters long?")) {
+      
+    }
+  }
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
