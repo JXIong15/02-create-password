@@ -11,12 +11,11 @@ function writePassword() {
 
   passwordText.value = password; // sets the password from the html doc to the password in this js doc
 
-  var char = "";
   password = "";
   
   // generates the new password
   function generatePassword() {
-    char = characterSet();
+    char = charSet();
     var passLength = 0;
 
     "From 8-128 characters, how long do you want your password length?" {
@@ -24,47 +23,53 @@ function writePassword() {
         error "Your password has to be between 8 - 128 characters."
       }
       password.length = passLength;
+
+      // adds a random character from the specified character set to the password for the desired password length
+      for (i = 0; i < passLength + 1; i++) {
+        password += random character from char 
+      }
     }
-
-
   }
   return password;
 }
 
 // establishes the characters to be used
-function characterSet() {
+function charSet() {
   var upperChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var lowerChar = "abcdefghijklmnopqrstuvwxyz";
   var num = "1234567890";
   var spec = "#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+  var char = "";
 
   // to make sure the user does not select "no" to every option.
   while (char = "") {
     "Do you want uppercase letters in your password?" {
       if (yes) {
-        char = char + upperChar;
+        char += upperChar;
       }
       "Do you want lowercase letters in your password?" {
         if (yes) {
-          char = char + lowerChar;
+          char += lowerChar;
         }
         "Do you want numeric values in your password?" {
           if (yes) {
-            char = char + num;
+            char += num;
           }
           "Do you want special characters in your password?" {
             if (yes) {
-              char = char + spec;
+              char += spec;
             }
             if (char = "") {
               "Please select 'yes' to at least one character option."
+            }
+            else {
+              return char;
             }
           }
         }
       }
     }
   }
-  return char;
 }
 
 // Add event listener to generate button
