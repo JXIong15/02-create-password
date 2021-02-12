@@ -54,7 +54,7 @@ function writePassword() {
   function generatePassword() {
       var pass = ""; // an empty string to store our characters for our password
 
-      var passLength = prompt("From 8-128 characters, how long do you want your password length? Enter a numeric value.");
+      var passLength;
 
       // to make sure the password length is a valid number
       while (passLength < 8 || passLength > 128 || passLength == "" || isNaN(passLength)) {
