@@ -52,12 +52,13 @@ function writePassword() {
 
   // generates the new password
   function generatePassword() {
-      var pass = ""; // an empty array to store our characters for our password
+      var pass = ""; // an empty string to store our characters for our password
 
       var passLength = prompt("From 8-128 characters, how long do you want your password length? Enter a numeric value.");
-      if (passLength < 8 || passLength > 128 || passLength == "" || isNaN(passLength)) {
-        alert("Your password has to be between 8 - 128 characters.");
-        generatePassword();
+
+      // to make sure the password length is a valid number
+      while (passLength < 8 || passLength > 128 || passLength == "" || isNaN(passLength)) {
+        passLength = prompt("From 8-128 characters, how long do you want your password length? Enter a numeric value.");
       }
 
       // adds a random character from the specified character set to the password for the desired password length
@@ -69,5 +70,5 @@ function writePassword() {
   }
 }
 
-// Add event listener to generate button
+// Add event listener to generate button, which triggers the created password
 generateBtn.addEventListener("click", writePassword);
