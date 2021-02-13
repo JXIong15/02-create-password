@@ -63,7 +63,7 @@ function writePassword() {
 
       // adds a random character from the specified character set to the password for the desired password length
       for (i = 0; i < passLength; i++) {
-        var randomChar = Math.floor((Math.random() * char.length) + 1);
+        var randomChar = Math.floor(Math.random() * char.length);
         pass += char[randomChar];
       }
       return pass;
