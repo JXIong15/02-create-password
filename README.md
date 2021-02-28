@@ -1,7 +1,7 @@
 # Homework 2: Create Password (Java Script)
 
-* Functioning Website Link: https://jxiong15.github.io/02-create-password/
-* GitHub Repository Link: https://github.com/JXIong15/02-create-password
+* Functioning Website Link: https://jxiong15.github.io/03-create-password/
+* GitHub Repository Link: https://github.com/JXIong15/03-create-password
 
 * Generates a random user specific password.
 
