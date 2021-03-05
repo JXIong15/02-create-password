@@ -16,11 +16,12 @@ function charSet() {
   num = num.split("");
   spec = spec.split("");
   var char = [];
+  var choice;
 
   // to make sure the user does not select "no" to every option.
   while (char.length == 0) {
-    var choice = confirm("Do you want uppercase letters in your password?");
-    if (choice == "y" || choice == "yes") {
+    choice = confirm("Do you want uppercase letters in your password?");
+    if (choice) {
       char = char.concat(upperChar);
     }
     choice = confirm("Do you want lowercase letters in your password?");
